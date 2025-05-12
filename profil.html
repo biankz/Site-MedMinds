@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial scale=1.0">
+    <title>
+        Profilul Pacientului
+    </title>
+    <link rel="stylesheet" href="profil_style.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="leftbox">
+            <nav>
+                <br /><br /><br /><br /><br /><br/>
+                <a onclick="tabs(0)" class="tab">
+                    <i class="fa fa-user"></i>
+                </a>
+                <br /><br /><br /><br /><br /><br />
+                <a onclick="tabs(1)" class="tab">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </nav>
+        </div>
+        <div class="rightbox">
+            <div class="profile tabShow">
+                <h1>Informatii personale</h1>
+                <h2>Nume complet*</h2>
+                <input type="text" class="input" required />
+                <h2>Zi de nastere*</h2>
+                <input type="text" class="input" required />
+                <h2>Cod numeric personal*</h2>
+                <input type="text" class="input" required />
+                <h2>Sex</h2>
+                <select name="Sex*" id="Sex">
+                    <option value="Femeie">Femeie</option>
+                    <option value="Barbat">Barbat</option>
+                </select>
+                <h2>Numar de telefon*</h2>
+                <input type="text" class="input" required />
+                <br />
+                <button class="btn">Salveaza date</button>
+            </div>
+            <div class="health tabShow">
+                <h1>Istoricul medical</h1>
+                <h2>Afectiuni medicale</h2>
+                <input type="text" class="input" />
+                <h2>Alergii</h2>
+                <input type="text" class="input" />
+                <h2>Medicamente prescrise</h2>
+                <input type="text" class="input" />
+                <h2>Interventii chirurgicale</h2>
+                <input type="text" class="input" />
+                <br />
+                <button class="btn">Salveaza date</button>
+            </div>
+        </div>
+    </div>
+    <script src="jquery/jquery.js"></script>
+    <script>
+        const tabBtn = document.querySelectorAll(".tab");
+        const tab = document.querySelectorAll(".tabShow");
+        function tabs(panelIndex) {
+            tab.forEach(function (node) {
+                node.style.display = "none";
+            });
+            tab[panelIndex].style.display = "block";
+        }
+        tabs(0);
+    </script>
+    <script>
+        $(".tab").click(function () {
+            $(this).addClass("active").siblings().removeClass("active");
+        })
+    </script>
+</body>
+</html>
